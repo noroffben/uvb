@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservvakt – Båtklubben</title>
+  <meta name="theme-color" content="#0c0f14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div>
+        <p class="eyebrow" id="eyebrow">Båtklubben</p>
+        <h1>Reservvakt</h1>
+        <p class="lead" id="lead">Röda datum är lediga. Den som först anmäler sig med sitt medlemsnummer får passet.</p>
+      </div>
+      <button class="ghost hidden" id="logoutBtn" type="button">Logga ut</button>
+    </header>
+
+    <section class="card">
+      <div class="month-bar">
+        <button class="icon-btn" id="prevBtn" type="button" aria-label="Föregående månad">‹</button>
+        <h2 id="monthTitle" aria-live="polite"></h2>
+        <button class="icon-btn" id="nextBtn" type="button" aria-label="Nästa månad">›</button>
+      </div>
+
+      <div class="weekdays" aria-hidden="true">
+        <span>Mån</span><span>Tis</span><span>Ons</span><span>Tor</span><span>Fre</span><span>Lör</span><span>Sön</span>
+      </div>
+      <div class="grid" id="grid" role="grid"></div>
+
+      <div class="legend">
+        <span><i class="dot dot-closed"></i>Inte öppet</span>
+        <span><i class="dot dot-open"></i>Ledigt</span>
+        <span><i class="dot dot-booked"></i>Bokat</span>
+      </div>
+    </section>
+
+    <section class="card hidden" id="adminList">
+      <h3>Bokningar i <span id="adminListMonth"></span></h3>
+      <ul id="bookingList" class="booking-list"></ul>
+    </section>
+
+    <p class="status" id="status" role="status"></p>
+  </main>
+
+  <!-- Dialogruta som återanvänds för alla val -->
+  <div class="overlay hidden" id="overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" id="modalClose" type="button" aria-label="Stäng">×</button>
+      <p class="eyebrow" id="modalEyebrow"></p>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

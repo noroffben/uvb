@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: batklubb-vakt
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_CODE
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
