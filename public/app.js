@@ -199,7 +199,7 @@
 
     const form = el('form', {},
       slot.note ? el('p', { class: 'note', text: slot.note }) : null,
-      el('p', { text: 'Ange ditt 4-siffriga medlemsnummer. Först till kvarn gäller.' }),
+      el('p', { text: 'Ange ditt 4-siffriga medlemsnummer.' }),
       el('label', { for: 'memberNumber', text: 'Medlemsnummer' }),
       input, error,
       el('div', { class: 'actions' }, btn)
@@ -236,7 +236,7 @@
   function noteForm(day, slot, submitText) {
     const input = el('input', {
       id: 'note', type: 'text', maxlength: '200',
-      placeholder: 't.ex. 22:00–06:00', value: slot?.note || '',
+      placeholder: 't.ex. 21:00–05:00', value: slot?.note || '',
     });
     const error = el('p', { class: 'error' });
     const btn = el('button', { class: 'primary', type: 'submit', text: submitText });
