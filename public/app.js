@@ -198,7 +198,7 @@
     const btn = el('button', { class: 'primary', type: 'submit', text: 'Boka passet' });
 
     const form = el('form', {},
-      slot.note ? el('p', { class: 'note', text: slot.note }) : null,
+      slot.note ? el('div', {}, el('label', { text: 'Meddelande från vaktansvarig' }), el('p', { class: 'note', text: slot.note })) : null,
       el('p', { text: 'Ange ditt 4-siffriga medlemsnummer.' }),
       el('label', { for: 'memberNumber', text: 'Medlemsnummer' }),
       input, error,
